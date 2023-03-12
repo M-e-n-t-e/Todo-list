@@ -1,0 +1,195 @@
+:root{
+    --purple: #8248FF;
+    --coral: lightcoral;
+    --lightPurple: rgba(130, 72, 255, .4);
+    --dark: #374151;
+    --darker: #1f2937;
+    --darkest:  #111827;
+    --background-2: #1F2937;
+    --light: rgba(255, 255, 255, .5);
+    --lighter: rgba(255, 255, 255, .7);
+    --lightest: #fff;
+}
+body{
+    background: var(--dark);
+    min-width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+section{
+    max-width: 60rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input, button{
+    outline: none;
+    border: none;
+    background: none;
+    appearance: none;
+}
+.input-area{
+    padding: 3rem;
+    margin-top: 4rem;
+    color: var(--light);
+    text-align: center;
+    width: 100%;
+}
+.input-area p{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+.todo-input{
+    width: 70%;
+    padding: 1rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+    background-color: var(--darker);
+    color: var(--lighter);
+}
+.submit-button{
+    color: var(--purple);
+    font-weight: 600;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .5s;
+}
+.submit-button:hover{
+    opacity: .8;
+}
+.submit-button:active{
+    opacity: .5;
+}
+.view-area{
+    min-width: 100%;
+    padding: 1rem;
+}
+.view-area p{
+    color: var(--light);
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+.task{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    background: var(--darkest);
+    padding: 1rem;
+    border-radius: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.fa{
+    /* color: var(--lighter); */
+    border: 1px solid var(--purple);
+    padding: 5px;
+    font-size: .8rem;
+    cursor: pointer;
+    transition: .5s ease;
+    border-radius: 5px;
+}
+.fa-check:hover{
+    background: var(--purple);
+    color: var(--lighter);
+}
+.fa-check:active{
+    background: var(--lightPurple);
+}
+.fa-check.active{
+    color: var(--lighter);
+    background: var(--purple);
+}
+.content{
+    color: var(--lightest);
+    padding-left: 1rem;
+    font-size: 1.25rem;
+    flex: 1 1 0%;
+    transition: .4s ease;
+}
+.content.active{
+    color: var(--purple);
+    text-decoration: line-through;
+}
+.content:not(:read-only){
+    color: var(--coral);
+}
+.content:read-only{
+    pointer-events: none;
+}
+.actions{
+    margin-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+.edit{
+    background: linear-gradient(to right, var(--purple), var(--coral));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: .5s;
+}
+.delete{
+    color: rgba(255, 0, 0, .8);
+    font-weight: 600;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: .5s;
+}
+.edit:hover{
+    opacity: .8;
+}
+.delete:hover{
+    opacity: .8;
+}
+@media (max-width: 800px) {
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .input-area p{
+        font-size: 4rem;
+    }
+    .todo-input{
+        padding: 2rem;
+        width: 100%;
+        margin-bottom: 3rem;
+        font-size: 1.7rem;
+    }
+    .todo-input::placeholder{
+        font-size: 1.7rem;
+    }
+    .submit-button{
+        font-size: 3rem;
+    }
+    .view-area p{
+        font-size: 3rem;
+    }
+    .actions{
+        flex-direction: column;
+        gap: 5px;
+    }
+    .edit , .delete{
+        border: 1px solid var(--purple);
+        padding: 10px;
+    }
+    .fa-check{
+        font-size: 1.5rem;
+    }
+    .content{
+        font-size: 1.5rem;
+    }
+}
