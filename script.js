@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
         check_mark.classList.add('fa', 'fa-check');
 
 
-        const content = document.createElement('input');
+        const content = document.createElement('textarea');
         content.classList.add('content');
         content.value = user_todo;
         content.type = 'text';
