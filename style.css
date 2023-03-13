@@ -78,7 +78,7 @@ input, button, form{
 }
 .input-form{
     display: flex;
-    align-items: start;
+    align-items: center;
     outline: none;
 }
 .submit-button{
